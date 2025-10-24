@@ -15,15 +15,15 @@
             font-family: 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6; /* மிகவும் இலகுவான பச்சை-சாம்பல் பின்னணி */
-            color: #444; /* மென்மையான கருப்பு */
-            line-height: 1.7; /* சிறந்த வாசிப்பிற்காக வரிகளுக்கு இடையில் அதிக இடைவெளி */
+            background-color: #f4f7f6;
+            color: #444;
+            line-height: 1.7;
         }
 
         /* --- பேனர் மற்றும் தலைப்பு --- */
         header {
-            position: relative; /* தலைப்பை பேனர் மீது வைக்க */
-            height: 250px;
+            position: relative;
+            height: 250px; /* பேனரின் உயரம் */
             width: 100%;
             display: flex;
             align-items: center;
@@ -33,14 +33,10 @@
         }
 
         .banner-bg {
-            /* பேனர் படம் */
-            background-image: url('banner.png');
+            background-image: url('banner.png'); /* உங்கள் பேனர் படம் */
             background-size: cover;
             background-position: center;
-            
-            /* படத்தின் மீது ஒரு கருப்பு லேயர் (எழுத்துக்கள் தெளிவாகத் தெரிய) */
-            filter: brightness(0.6); 
-            
+            filter: brightness(0.9); /* பேனரை சற்றே பிரகாசமாக்குகிறது */
             position: absolute;
             top: 0;
             left: 0;
@@ -48,42 +44,47 @@
             height: 100%;
             z-index: -1;
         }
-
-        header h1 {
-            font-size: 2rem; /* மொபைலில் சற்று பெரியதாக */
-            font-weight: 700;
-            margin: 0 20px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); /* எழுத்துக்களுக்கு நிழல் */
-        }
+        
+        /* header h1 ஸ்டைல் நீக்கப்பட்டது, ஏனெனில் தலைப்பு கீழே நகர்த்தப்பட்டது */
 
         /* --- முக்கிய உள்ளடக்க "கார்டு" --- */
         main {
-            padding: 20px 10px; /* மொபைலில் பக்கவாட்டில் சிறிய இடைவெளி */
+            padding: 20px 10px;
         }
         
         .container {
             max-width: 800px;
             margin: -50px auto 0 auto; /* பேனர் மீது 50px ஏறி வர */
             background-color: #ffffff;
-            border-radius: 12px; /* அழகான வளைந்த முனைகள் */
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* மென்மையான நிழல் */
-            padding: 30px 25px; /* உள்ளடக்கத்திற்கு அதிக இடைவெளி */
-            position: relative; /* z-index வேலை செய்ய */
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px 25px;
+            position: relative;
             z-index: 10;
         }
 
-        /* --- உள்ளடக்க ஸ்டைல்கள் --- */
+        /* --- கட்டுரைத் தலைப்புக்கான புதிய ஸ்டைல் --- */
+        .article-title {
+            color: #00796B; /* H2 நிறத்துடன் பொருத்தம் */
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* --- மற்ற உள்ளடக்க ஸ்டைல்கள் --- */
         h2 {
-            color: #00796B; /* அடர் நீல-பச்சை (Teal) */
+            color: #00796B;
             font-size: 1.6rem;
             font-weight: 600;
-            border-bottom: 3px solid #e0f2f1; /* மிகவும் இலகுவான நீல-பச்சை */
+            border-bottom: 3px solid #e0f2f1;
             padding-bottom: 8px;
             margin-top: 35px;
         }
 
         h3 {
-            color: #388E3C; /* அடர் பச்சை */
+            color: #388E3C;
             font-size: 1.3rem;
             font-weight: 600;
             margin-top: 25px;
@@ -94,30 +95,28 @@
             margin-bottom: 18px;
         }
 
-        /* --- மேம்படுத்தப்பட்ட பட்டியல் --- */
         ul {
-            list-style-type: none; /* இயல்பு புல்லட்களை நீக்கு */
+            list-style-type: none;
             padding-left: 0;
         }
 
         li {
             position: relative;
-            padding-left: 35px; /* ஐகானுக்கான இடைவெளி */
+            padding-left: 35px;
             margin-bottom: 15px;
             font-size: 1rem;
         }
 
         li::before {
-            content: '✔'; /* அழகான செக்-மார்க் */
+            content: '✔';
             position: absolute;
             left: 5px;
             top: 0;
-            color: #4CAF50; /* பிரகாசமான பச்சை */
+            color: #4CAF50;
             font-size: 1.2rem;
             font-weight: bold;
         }
 
-        /* AVAVS பட்டியலுக்கு மட்டும் ஐகான் வேண்டாம் */
         .avavs-list li::before {
             content: none;
         }
@@ -126,30 +125,29 @@
             margin-bottom: 10px;
         }
         .avavs-list strong {
-            color: #00796B; /* H2 நிறத்துடன் பொருத்தம் */
+            color: #00796B;
             min-width: 140px;
             display: inline-block;
             margin-right: 5px;
         }
 
-        /* முடிவுரை */
         .conclusion p {
             font-size: 1.05rem;
             font-weight: 600;
             color: #333;
-            background-color: #e8f5e9; /* இலகுவான பச்சை பின்னணி */
+            background-color: #e8f5e9;
             padding: 15px;
             border-left: 5px solid #4CAF50;
             border-radius: 5px;
         }
 
-        /* --- நேர்த்தியான அடிக்குறிப்பு --- */
+        /* --- அடிக்குறிப்பு --- */
         footer {
             text-align: center;
             padding: 30px 20px;
-            margin-top: 0; /* கார்டுடன் ஒட்டி இருக்க */
-            background-color: #263238; /* அடர் நீல-சாம்பல் */
-            color: #eceff1; /* மென்மையான வெள்ளை */
+            margin-top: 0;
+            background-color: #263238;
+            color: #eceff1;
             font-size: 0.9rem;
             line-height: 1.7;
         }
@@ -160,16 +158,15 @@
 
         footer small {
             font-size: 0.8rem;
-            color: #90a4ae; /* இலகுவான சாம்பல் */
+            color: #90a4ae;
         }
         
-        /* --- மொபைல் ரெஸ்பான்சிவ் சரிசெய்தல் --- */
         @media (min-width: 600px) {
-            header h1 {
-                font-size: 2.5rem; /* பெரிய திரைகளில் தலைப்பு பெரியதாக */
+            .article-title {
+                font-size: 2.5rem;
             }
             .container {
-                padding: 40px 50px; /* பெரிய திரைகளில் அதிக இடைவெளி */
+                padding: 40px 50px;
             }
             main {
                 padding: 20px;
@@ -181,12 +178,13 @@
 
     <header>
         <div class="banner-bg"></div>
-        <h2>Y-டயட்: ஆரோக்கியத்திற்கான ஒரு முழுமையான பயணம்</h2>
-    </header>
+        </header>
 
     <main>
         <article class="container">
             
+            <h1 class="article-title">Y-டயட்: ஆரோக்கியத்திற்கான ஒரு முழுமையான பயணம்</h1>
+
             <p>இன்றைய அவசர உலகில், "எதைச் சாப்பிடுவது?", "எந்த டயட்டைப் பின்பற்றுவது?" என்ற குழப்பம் நம்மில் பலருக்கும் இருக்கிறது. மேலைநாட்டு உணவுகள் நல்லதா, அல்லது நமது தாத்தா-பாட்டி காலத்து உணவுகள் நல்லதா? இந்தக் கேள்விக்கு ஒரு அருமையான தீர்வாக, நமது பாரம்பரிய அறிவையும் நவீன அறிவியலையும் இணைத்து "Y-டயட்" என்ற ஒரு புதிய அணுகுமுறை வந்துள்ளது.</p>
             <p>இது எப்படி நமது ஆரோக்கியத்திற்கு உதவுகிறது என்பதை இப்போது விரிவாகப் பார்க்கலாம்.</p>
 
